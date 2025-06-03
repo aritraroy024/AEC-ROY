@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive User Information Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-cyan-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center p-6">
+    <form class="bg-white rounded-lg shadow-lg max-w-4xl w-full p-8 space-y-6" novalidate>
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-6">User Information Form</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- First Name -->
+            <div>
+                <label for="firstName" class="block text-gray-700 font-semibold mb-2">First Name <span class="text-red-600">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jane" required class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Last Name -->
+            <div>
+                <label for="lastName" class="block text-gray-700 font-semibold mb-2">Last Name <span class="text-red-600">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Doe" required class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-gray-700 font-semibold mb-2">Email <span class="text-red-600">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Password -->
+            <div>
+                <label for="password" class="block text-gray-700 font-semibold mb-2">Password <span class="text-red-600">*</span></label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Date of Birth -->
+            <div>
+                <label for="dob" class="block text-gray-700 font-semibold mb-2">Date of Birth <span class="text-red-600">*</span></label>
+                <input type="date" id="dob" name="dob" required class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Phone -->
+            <div>
+                <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 234-567-8901" pattern="^\+?[0-9\s\-]{7,15}$" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Website -->
+            <div>
+                <label for="website" class="block text-gray-700 font-semibold mb-2">Website URL</label>
+                <input type="url" id="website" name="website" placeholder="https://example.com" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Number Input -->
+            <div>
+                <label for="siblings" class="block text-gray-700 font-semibold mb-2">Number of Siblings</label>
+                <input type="number" id="siblings" name="siblings" min="0" max="20" step="1" placeholder="0" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Address -->
+            <div class="md:col-span-2">
+                <label for="address" class="block text-gray-700 font-semibold mb-2">Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St, Apt 4B" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- City -->
+            <div>
+                <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
+                <input type="text" id="city" name="city" placeholder="Hometown" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Country -->
+            <div>
+                <label for="country" class="block text-gray-700 font-semibold mb-2">Country <span class="text-red-600">*</span></label>
+                <select id="country" name="country" required class="w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="" disabled selected>Select your country</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>United Kingdom</option>
+          <option>Australia</option>
+          <option>Other</option>
+        </select>
+            </div>
+            <!-- Gender Radio Buttons -->
+            <div>
+                <span class="block text-gray-700 font-semibold mb-2">Gender <span class="text-red-600">*</span></span>
+                <label class="inline-flex items-center mr-6">
+          <input type="radio" name="gender" value="male" required class="form-radio text-indigo-600" />
+          <span class="ml-2 text-gray-700">Male</span>
+        </label>
+                <label class="inline-flex items-center mr-6">
+          <input type="radio" name="gender" value="female" class="form-radio text-indigo-600" />
+          <span class="ml-2 text-gray-700">Female</span>
+        </label>
+                <label class="inline-flex items-center">
+          <input type="radio" name="gender" value="other" class="form-radio text-indigo-600" />
+          <span class="ml-2 text-gray-700">Other</span>
+        </label>
+            </div>
+            <!-- Interests Checkboxes -->
+            <div class="md:col-span-2">
+                <span class="block text-gray-700 font-semibold mb-2">Interests</span>
+                <label class="inline-flex items-center mr-6">
+          <input type="checkbox" name="interests" value="sports" class="form-checkbox text-indigo-600" />
+          <span class="ml-2 text-gray-700">Sports</span>
+        </label>
+                <label class="inline-flex items-center mr-6">
+          <input type="checkbox" name="interests" value="music" class="form-checkbox text-indigo-600" />
+          <span class="ml-2 text-gray-700">Music</span>
+        </label>
+                <label class="inline-flex items-center mr-6">
+          <input type="checkbox" name="interests" value="travel" class="form-checkbox text-indigo-600" />
+          <span class="ml-2 text-gray-700">Travel</span>
+        </label>
+                <label class="inline-flex items-center">
+          <input type="checkbox" name="interests" value="reading" class="form-checkbox text-indigo-600" />
+          <span class="ml-2 text-gray-700">Reading</span>
+        </label>
+            </div>
+            <!-- File Upload -->
+            <div class="md:col-span-2">
+                <label for="profilePic" class="block text-gray-700 font-semibold mb-2">Profile Picture</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*" class="w-full text-gray-700 border border-gray-300 rounded-md px-4 py-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <!-- Additional Notes -->
+            <div class="md:col-span-2">
+                <label for="notes" class="block text-gray-700 font-semibold mb-2">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Any additional information..." class="w-full rounded-md border border-gray-300 px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+            <!-- Agreement Checkbox -->
+            <div class="md:col-span-2 flex items-center">
+                <input type="checkbox" id="agreement" name="agreement" required class="form-checkbox text-indigo-600 mr-3" />
+                <label for="agreement" class="text-gray-700 select-none">I agree to the <a href="#" class="text-indigo-600 underline">terms and conditions</a> <span class="text-red-600">*</span></label>
+            </div>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-md py-3 shadow-md transition duration-150 ease-in-out">
+      Submit
+    </button>
+    </form>
+</body>
+
+</html>
